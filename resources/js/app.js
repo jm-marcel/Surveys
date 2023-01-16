@@ -1,8 +1,7 @@
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { InertiaProgress } from '@inertiajs/progress';
-
-InertiaProgress.init();
+import store from './Exports/store';
 
 createInertiaApp({
     id: 'app',
@@ -13,6 +12,9 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
         .use(plugin)
+        .use(store)
         .mount(el);
     },
 });
+
+InertiaProgress.init();
