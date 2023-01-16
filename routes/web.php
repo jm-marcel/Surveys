@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/laravel', function () {
-    return view('laravel');
+Route::get('/', function () {
+    return Inertia::render('Welcome');
 });
 
-Route::get('/index', function () {
-    return view('index');
-});
+// Route::get('/laravel', function () {
+//     return view('laravel');
+// });
