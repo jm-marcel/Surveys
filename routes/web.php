@@ -15,7 +15,23 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    return Inertia::location('/dashboard');
+});
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Default');
+});
+
+Route::get('/surveys', function () {
+    return Inertia::render('Default');
+});
+
+Route::get('/login', function () {
+    return Inertia::render('Login');
+});
+
+Route::get('/register', function () {
+    return Inertia::render('Register');
 });
 
 // Route::get('/laravel', function () {

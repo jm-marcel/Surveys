@@ -2,6 +2,7 @@ import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import store from './Exports/store';
+import router from './Exports/router';
 
 createInertiaApp({
     id: 'app',
@@ -13,6 +14,7 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
         .use(plugin)
         .use(store)
+        .use(router)
         .mount(el);
     },
 });
